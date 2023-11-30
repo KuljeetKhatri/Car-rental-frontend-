@@ -20,6 +20,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { AddCarComponent } from './add-car/add-car.component';
+import { ApprovedCarComponent } from './approved-car/approved-car.component';
 
 
 
@@ -38,6 +39,7 @@ import { AddCarComponent } from './add-car/add-car.component';
     ReservationComponent,
     CarReservationComponent,
     AddCarComponent,
+    ApprovedCarComponent,
 
   ],
   imports: [

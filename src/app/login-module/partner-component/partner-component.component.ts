@@ -38,9 +38,14 @@ export class PartnerComponentComponent implements OnInit{
     }
   }
 
-  AddCar(){
+  addCar(){
     this.partnerShared.partnerId = this.partnerDetails.id;
     this.router.navigate(['/addCar']);
+  }
+
+  approvedCar(){
+    this.partnerShared.partnerId = this.partnerDetails.id;
+    this.router.navigate(["/approvedCar"]);
   }
 
 

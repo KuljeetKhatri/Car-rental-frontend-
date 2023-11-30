@@ -11,6 +11,7 @@ import { RentalListComponent } from './rental-list/rental-list.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { AddCarComponent } from './add-car/add-car.component';
+import { ApprovedCarComponent } from './approved-car/approved-car.component';
 
 const routes: Routes = [
 
@@ -95,6 +96,11 @@ const routes: Routes = [
     {
       path: "addCar",
       component:AddCarComponent
+    },
+
+    {
+      path: "approvedCar",
+      component:ApprovedCarComponent
     },
     
 ];

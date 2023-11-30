@@ -32,7 +32,7 @@ export class AddCarComponent implements OnInit{
   }
 
 
-  addCar(){
+  addCarButton(){
     const partnerId = this.partnerShared.partnerId;
     this.http.post(`http://localhost:8082/tempCar/${partnerId}`,this.CarDetais).subscribe(
       (response:any)=>{
