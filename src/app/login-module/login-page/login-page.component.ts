@@ -51,7 +51,6 @@ export class LoginPageComponent {
       this.http.post(this.urlApi + loginEndpoint, loginData)
         .subscribe(
           (response: any) => {
-            console.log(response.UserDto);
             // console.log(response.UserDto);
             // console.log(response.UserDto[0]);
             if (this.selectedRole === "Admin") {
@@ -61,9 +60,11 @@ export class LoginPageComponent {
               localStorage.setItem('adminId',response.UserDto.id);
               this.router.navigate(['/user'])
             } else {
-              localStorage.setItem('adminId',response.partner.id);
+              console.log(response);
+              localStorage.setItem('adminId',response.PartnerDto.id);
+              console.log(localStorage.getItem('adminId'));
               this.router.navigate(["/partner"])
-            }
+            } 
           },
           (error) => {
             console.error('Login failed', error);

@@ -19,6 +19,7 @@ import { RentalListComponent } from './rental-list/rental-list.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
+import { AddCarComponent } from './add-car/add-car.component';
 
 
 
@@ -36,6 +37,7 @@ import { CarReservationComponent } from './car-reservation/car-reservation.compo
     RentalListComponent,
     ReservationComponent,
     CarReservationComponent,
+    AddCarComponent,
 
   ],
   imports: [

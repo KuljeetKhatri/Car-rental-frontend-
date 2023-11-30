@@ -10,6 +10,7 @@ import { TempCarListComponent } from './temp-car-list/temp-car-list.component';
 import { RentalListComponent } from './rental-list/rental-list.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
+import { AddCarComponent } from './add-car/add-car.component';
 
 const routes: Routes = [
 
@@ -90,6 +91,12 @@ const routes: Routes = [
       // data: { permission: 'D'},
 
     },
+
+    {
+      path: "addCar",
+      component:AddCarComponent
+    },
+    
 ];
 
 @NgModule({
