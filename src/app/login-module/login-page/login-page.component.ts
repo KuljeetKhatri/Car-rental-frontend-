@@ -22,7 +22,6 @@ export class LoginPageComponent {
 
   goToHome() {
     console.log("Selected Role:", this.selectedRole);
-
     const loginData = {
       email: this.email,
       password: this.password
@@ -77,5 +76,9 @@ export class LoginPageComponent {
           }
         );
     }
+  }
+
+  singUpClick(){
+    this.router.navigate(["/registration"]);
   }
 }

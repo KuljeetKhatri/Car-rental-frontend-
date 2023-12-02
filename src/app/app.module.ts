@@ -6,6 +6,7 @@ import { ComponentModule } from './component/component.module';
 // import { AdminComponentComponent } from './login-modual/admin-component/admin-component.component';
 import { FormsModule } from '@angular/forms';
 import { SharedService } from './shared.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -20,6 +21,7 @@ import { SharedService } from './shared.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
 
   ],
   providers: [SharedService],

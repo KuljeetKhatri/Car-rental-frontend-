@@ -48,5 +48,9 @@ export class PartnerComponentComponent implements OnInit{
     this.router.navigate(["/approvedCar"]);
   }
 
+  homeClick(){
+    this.router.navigate(["/partner"]);
+  }
+
 
 }

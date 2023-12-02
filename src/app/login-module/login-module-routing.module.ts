@@ -12,6 +12,9 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { ApprovedCarComponent } from './approved-car/approved-car.component';
+import { RegistrationPageComponent } from './registration-page/registration-page.component';
+import { PartnerRegistrationComponent } from './partner-registration/partner-registration.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 const routes: Routes = [
 
@@ -102,6 +105,20 @@ const routes: Routes = [
       path: "approvedCar",
       component:ApprovedCarComponent
     },
+
+    {
+      path:"registration",
+      component:RegistrationPageComponent
+    },
+    {
+      path:"user-registration",
+      component:UserRegistrationComponent
+    },
+
+    {
+      path:"partner-registration",
+      component:PartnerRegistrationComponent
+    }
     
 ];
 

@@ -21,6 +21,10 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { ApprovedCarComponent } from './approved-car/approved-car.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { PartnerRegistrationComponent } from './partner-registration/partner-registration.component';
+import { RegistrationPageComponent } from './registration-page/registration-page.component';
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 
 
 
@@ -40,6 +44,10 @@ import { ApprovedCarComponent } from './approved-car/approved-car.component';
     CarReservationComponent,
     AddCarComponent,
     ApprovedCarComponent,
+    UserRegistrationComponent,
+    PartnerRegistrationComponent,
+    RegistrationPageComponent,
+    DialogBoxComponent,
 
   ],
   imports: [

@@ -43,4 +43,13 @@ addCar(){
   this.router.navigate(['/addCar']);
 }
 
+homeClick(){
+  this.router.navigate(["/partner"]);
+}
+
+approvedCarClick(){
+  this.router.navigate(["/approvedCar"]);
+}
+
+
 }

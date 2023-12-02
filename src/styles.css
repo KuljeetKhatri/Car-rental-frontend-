@@ -749,3 +749,5 @@ This is main CSS file that contains custom style rules used in this template
   .reservationRecord th{
     margin: 100px;
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
