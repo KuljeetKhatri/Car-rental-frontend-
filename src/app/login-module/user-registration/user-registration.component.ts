@@ -1,8 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 import { MatDialog } from '@angular/material/dialog';
+import { PartnerSharedServiceService } from '../partner-shared-service.service';
+import { SharedService } from 'src/app/shared.service';
+import { UserSharedService } from 'src/app/user-shared.service';
 
 @Component({
   selector: 'app-user-registration',
@@ -10,7 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit{
-  constructor(private router: Router, private http: HttpClient){}
+  constructor(private router: Router, private http: HttpClient, private dialog : MatDialog , private sharedData: UserSharedService){}
   public user:{
     firstName:String;
     lastName:String;
@@ -32,16 +35,19 @@ export class UserRegistrationComponent implements OnInit{
 
 
   ngOnInit(): void {
-      console.log(this.user);
+      // console.log(this.user);
   }
 
   userRegistration(){
     this.http.post(`http://localhost:8082/user`,this.user).subscribe(
       (response: any)=>{
         console.log(response);
-        // if(response === "Email already exists"){
+        this.sharedData.userId = response.id;
+        this.router.navigate(["/credit-card"]);
 
-        // }
+      },
+      (error: HttpErrorResponse) => { 
+          this.openDialog('1');
       }
     )
   }
@@ -50,12 +56,12 @@ export class UserRegistrationComponent implements OnInit{
     console.log(this.user);
     this.userRegistration();
   }
-  // openDialog(dialogType: string) {
-  //   this.dialog.open(DialogBoxComponent, {
-  //     width: '400px',
-  //     data: { dialogType }
-  //   });
-  // }
+  openDialog(dialogType: string) {
+    this.dialog.open(DialogBoxComponent, {
+      width: '400px',
+      data: { dialogType }
+    });
+  }
  
 
 }

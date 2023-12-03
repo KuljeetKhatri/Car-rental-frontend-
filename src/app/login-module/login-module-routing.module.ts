@@ -15,6 +15,7 @@ import { ApprovedCarComponent } from './approved-car/approved-car.component';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { PartnerRegistrationComponent } from './partner-registration/partner-registration.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { CrditCardComponent } from './crdit-card/crdit-card.component';
 
 const routes: Routes = [
 
@@ -118,6 +119,10 @@ const routes: Routes = [
     {
       path:"partner-registration",
       component:PartnerRegistrationComponent
+    },
+    {
+      path:"credit-card",
+      component:CrditCardComponent
     }
     
 ];

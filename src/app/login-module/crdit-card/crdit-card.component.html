@@ -12,8 +12,7 @@
         class="hero-content container d-flex align-items-center justify-content-center text-center"
       >
         <div id ="kuljeet1">
-          <h1 class="text-primary">User Information</h1>
-          <p class="hero-paragraph">We have many best rental car collections.</p>
+          <h1 class="text-primary">Credit Card Information</h1>
         </div>
       </div>
     </section>
@@ -29,14 +28,46 @@
           </div>
       
           <div class="col-12 col-md-6 mt-4">
-            <label for="firstName" class="label-style text-capitalize form-label">First Name</label>
+            <label for="cardNumber" class="label-style text-capitalize form-label">Card Number</label>
+            <div class="input-group date">
+              <input
+                type="number"
+                [(ngModel)]="card.cardNumber"
+                class="form-control p-3 position-relative"
+                id="cardNumber"
+                name="cardNumber"
+              />
+              <span class="search-icon-position position-absolute p-3">
+                <!-- iconify-icon or other icon component goes here -->
+              </span>
+            </div>
+          </div>
+      
+          <div class="col-12 col-md-6 mt-4">
+            <label for="validThru" class="label-style text-capitalize form-label">Expiry month-year</label>
+            <div class="input-group date">
+              <input
+                type="date"
+                [(ngModel)]="card.validThru"
+                class="form-control p-3 position-relative"
+                id="validThru"
+                name="validThru"
+              />
+              <span class="search-icon-position position-absolute p-3">
+                <!-- iconify-icon or other icon component goes here -->
+              </span>
+            </div>
+          </div>
+      
+          <div class="col-12 col-md-6 mt-4">
+            <label for="cvv" class="label-style text-capitalize form-label">CVV</label>
             <div class="input-group date">
               <input
                 type="text"
-                [(ngModel)]="partner.firstName"
+                [(ngModel)]="card.cvv"
                 class="form-control p-3 position-relative"
-                id="firstName"
-                name="firstName"
+                id="cvv"
+                name="cvv"
               />
               <span class="search-icon-position position-absolute p-3">
                 <!-- iconify-icon or other icon component goes here -->
@@ -45,88 +76,21 @@
           </div>
       
           <div class="col-12 col-md-6 mt-4">
-            <label for="lastName" class="label-style text-capitalize form-label">Last Name</label>
+            <label for="limit" class="label-style text-capitalize form-label">Enter Card Limit</label>
             <div class="input-group date">
               <input
-                type="text"
-                [(ngModel)]="partner.lastName"
+                type="Number"
+                [(ngModel)]="card.cardLimit"
                 class="form-control p-3 position-relative"
-                id="lastName"
-                name="lastName"
+                id="limit"
+                name="limit"
               />
               <span class="search-icon-position position-absolute p-3">
                 <!-- iconify-icon or other icon component goes here -->
               </span>
             </div>
           </div>
-      
-          <div class="col-12 col-md-6 mt-4">
-            <label for="password" class="label-style text-capitalize form-label">Password</label>
-            <div class="input-group date">
-              <input
-                type="password"
-                [(ngModel)]="partner.password"
-                class="form-control p-3 position-relative"
-                id="password"
-                name="password"
-              />
-              <span class="search-icon-position position-absolute p-3">
-                <!-- iconify-icon or other icon component goes here -->
-              </span>
-            </div>
-          </div>
-      
-          <div class="col-12 col-md-6 mt-4">
-            <label for="email" class="label-style text-capitalize form-label">Email</label>
-            <div class="input-group date">
-              <input
-                type="email"
-                [(ngModel)]="partner.email"
-                class="form-control p-3 position-relative"
-                id="email"
-                name="email"
-              />
-              <span class="search-icon-position position-absolute p-3">
-                <!-- iconify-icon or other icon component goes here -->
-              </span>
-            </div>
-          </div>
-      
-          <div class="col-12 col-md-6 mt-4">
-            <label for="phone" class="label-style text-capitalize form-label">Phone</label>
-            <div class="input-group date">
-              <input
-                type="tel"
-                [(ngModel)]="partner.phone"
-                class="form-control p-3 position-relative"
-                id="phone"
-                name="phone"
-              />
-              <span class="search-icon-position position-absolute p-3">
-                <!-- iconify-icon or other icon component goes here -->
-              </span>
-            </div>
-          </div>
-      
-          <div class="col-12 col-md-6 mt-4">
-            <label for="address" class="label-style text-capitalize form-label">Enter Address</label>
-            <div class="input-group date">
-              <input
-                type="text"
-                [(ngModel)]="partner.address"
-                class="form-control p-3 position-relative"
-                id="address"
-                name="address"
-              />
-              <span class="search-icon-position position-absolute p-3">
-                <!-- iconify-icon or other icon component goes here -->
-              </span>
-            </div>
-          </div>
-      
           <!-- ... other form elements ... -->
-
-
           <div  class="d-grid gap-2 mt-4">
             <a (click)="submitClick()" class="btn btn-primary btn-lg">Submit</a>
           </div>

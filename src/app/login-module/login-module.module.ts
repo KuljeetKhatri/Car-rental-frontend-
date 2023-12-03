@@ -25,6 +25,10 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { PartnerRegistrationComponent } from './partner-registration/partner-registration.component';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CrditCardComponent } from './crdit-card/crdit-card.component';
+
 
 
 
@@ -48,6 +52,7 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
     PartnerRegistrationComponent,
     RegistrationPageComponent,
     DialogBoxComponent,
+    CrditCardComponent,
 
   ],
   imports: [
@@ -56,6 +61,7 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
     ComponentModule,
     FormsModule,
     HttpClientModule,
+    MatDialogModule,
   ]
 })
 export class LoginModuleModule { }

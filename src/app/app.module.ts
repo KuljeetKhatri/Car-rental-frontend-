@@ -7,6 +7,10 @@ import { ComponentModule } from './component/component.module';
 import { FormsModule } from '@angular/forms';
 import { SharedService } from './shared.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -22,6 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatDialogModule,
+    HttpClientModule
+    
 
   ],
   providers: [SharedService],
