@@ -30,37 +30,61 @@
       </div>
     </nav>
   
-  <div class="container mt-5 pt-4">
-    <h2>Cars</h2>
-    <table class="table table-striped" >
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Brand</th>
-          <th>Model</th>
-          <th>Year</th>
-          <th>Color</th>
-          <!-- Add more headers as needed -->
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let car of cars">
-          <td>{{ car.id }}</td>
-          <td>{{ car.brand }}</td>
-          <td>{{ car.model }}</td>
-          <td>{{ car.year }}</td>
-          <td>{{ car.color }}</td>
-          <!-- Add more cells as needed -->
-        </tr>
-      </tbody>
-    </table>
-  
-  </div>
+    <div class="container mt-5 pt-4">
+      <h2>Cars</h2>
+      <div class="container py-5">
+        <div class="row justify-content-center mb-3">
+          <div class="col-md-12 col-xl-15" *ngFor="let car of cars">
+            <div class="card shadow-0 border rounded-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                    <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                      <img src="../../../assets/Image/cars/{{car.model}}.jpg" class="w-100" />
+                      <a href="#!">
+                        <div class="hover-overlay">
+                          <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                        </div>
+                        
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6 col-xl-6">
+                    <h5 style="font-size: larger;">{{ car.model }}</h5>
+                    <div class="mt-1 mb-0 text-muted large">
+                      <span>{{ car.brand }}</span>
+                      <span class="text-primary"> • </span>
+                      <span>{{ car.seats }} Seater</span>
+                      <span class="text-primary"> • </span>
+                      <span>{{ car.bodyType }} SUV<br /></span>
+                    </div>
+                    <div class="mb-2 text-muted large">
+                      <span>{{ car.year }}</span>
+                      <span class="text-primary"> • </span>
+                      <span>{{ car.color }}</span>
+                      <span class="text-primary"> • </span>
+                      <span>registration Number:{{ car.registrationNumber }}<br /></span>
+                    </div>
+    
+                  </div>
+                  <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                    <div class="d-flex flex-row align-items-center mb-1">
+                      <h4 class="mb-1 me-1" style="color: darkslategrey;">{{ car.rentPerDay }} PKR</h4>
+                    </div>
+                    <h3 class="text-success">{{ car.isAvailable }}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Footer -->
     <footer class="py-5 bg-dark" >
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; GoCar 2023</p>
       </div>
     </footer>
-  </section>
+</section>
   

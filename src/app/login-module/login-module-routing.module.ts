@@ -74,7 +74,7 @@ const routes: Routes = [
     },
     
     {
-      path: "recodes",
+      path: "records",
       component: RentalListComponent ,
       // canActivate: [LoggedInGuard, AuthorizationGuard],
       // data: { permission: 'D'},

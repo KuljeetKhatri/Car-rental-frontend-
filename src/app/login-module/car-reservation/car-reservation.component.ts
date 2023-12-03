@@ -44,7 +44,7 @@ export class CarReservationComponent implements OnInit{
 
   OnClickedRecodes(){
     this.router.navigateByUrl('/', { skipLocationChange: false }).then(() => {
-      this.router.navigate(['/recodes']);
+      this.router.navigate(['/records']);
     });
   }
 

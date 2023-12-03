@@ -40,7 +40,7 @@ export class UserComponentComponent implements OnInit{
     localStorage.setItem("userid",this.userDetails.firstName);
     console.log(localStorage.getItem("userId"));
     this.router.navigateByUrl('/', { skipLocationChange: false }).then(() => {
-      this.router.navigate(['/recodes']);
+      this.router.navigate(['/records']);
     });
   }
 
