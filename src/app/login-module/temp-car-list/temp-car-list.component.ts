@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './temp-car-list.component.html',
   styleUrls: ['./temp-car-list.component.css']
 })
-export class TempCarListComponent implements OnInit{
+export class  TempCarListComponent implements OnInit{
 
   constructor(private router: Router, private http: HttpClient){}
 
@@ -17,6 +17,7 @@ export class TempCarListComponent implements OnInit{
     this.http.get('http://localhost:8082/tempCar').subscribe(
       (response: any) => {
         this.tempCars = response;
+        console.log(response);
       },
       (error) => {
         console.error('Error fetching cars', error);

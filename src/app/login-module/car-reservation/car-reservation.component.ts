@@ -1,7 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
+import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-car-reservation',
@@ -13,7 +15,7 @@ export class CarReservationComponent implements OnInit{
   private split: any;
   public cars: any[] =[];
 
-  constructor(private sharedService: SharedService, private router:Router, private http: HttpClient){}
+  constructor(private sharedService: SharedService, private router:Router, private http: HttpClient, private dialog: MatDialog){}
 
   ngOnInit(): void {
       this.getModelCar();
@@ -72,15 +74,20 @@ export class CarReservationComponent implements OnInit{
     this.http.post(`http://localhost:8082/reservation/${localStorage.getItem("adminId")}/${carid}`, loginResservationData).subscribe(
       (response: any) => {
         console.log(response);
-        this.router.navigateByUrl('/', { skipLocationChange: false }).then(() => {
-          this.router.navigate(['/recodes']);
-        });
-
+        this.router.navigate(['/records']);
       },
-      (error) => {
+      (error: HttpErrorResponse) => {
         console.error('Error fetching cars', error);
+        this.openDialog('1');
       }
     );
 
+  }
+
+  openDialog(dialogType: string) {
+    this.dialog.open(DialogBoxComponent, {
+      width: '400px',
+      data: { dialogType }
+    });
   }
 }

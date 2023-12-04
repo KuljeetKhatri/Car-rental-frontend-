@@ -41,10 +41,10 @@
             <tr>
               <th>Model</th>
               <th>Brand</th>
+              <th>Registration Number</th>
               <th>Start Date</th>
               <th>End Date</th>
               <th>Total Rent</th>
-              <th>Color</th>
               <!-- Add more headers as needed -->
             </tr>
           </thead>
@@ -52,10 +52,10 @@
             <tr *ngFor="let record of records">
               <td>{{ record.model }}</td>
               <td>{{ record.brand }}</td>
+              <td>{{ record.registrationNumber}}</td>
               <td>{{ record.startDate }}</td>
               <td>{{ record.endDate }}</td>
               <td>{{ record.rentPerDay}}</td>
-              <td>{{ record.color}}</td>
               <!-- Add more cells as needed -->
             </tr>
           </tbody>
@@ -70,6 +70,7 @@
             <tr>
               <th>Model</th>
               <th>Brand</th>
+              <th>Registration Number</th>
               <th>Start Date</th>
               <th>End Date</th> 
               <th>Total Rent</th>
@@ -81,6 +82,7 @@
             <tr *ngFor="let rental of oldRecords">
               <td>{{ rental.model }}</td>
               <td>{{ rental.brand }}</td>
+              <td>{{ rental.registrationNumber }}</td>
               <td>{{ rental.startDate }}</td>
               <td>{{ rental.endDate }}</td>
               <td>{{ rental.rentPerDay}}</td>

@@ -1,7 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PartnerSharedServiceService } from '../partner-shared-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-add-car',
@@ -10,7 +12,8 @@ import { PartnerSharedServiceService } from '../partner-shared-service.service';
 })
 export class AddCarComponent implements OnInit{
 
-  constructor(private http: HttpClient, private router: Router, private partnerShared: PartnerSharedServiceService){}
+  constructor(private http: HttpClient, private router: Router, private partnerShared: PartnerSharedServiceService,
+    private dialog: MatDialog){}
   public CarDetais:{
     brand: string;
     color: string;
@@ -37,6 +40,9 @@ export class AddCarComponent implements OnInit{
     this.http.post(`http://localhost:8082/tempCar/${partnerId}`,this.CarDetais).subscribe(
       (response:any)=>{
         console.log(response);
+        this.router.navigate(["/partner"]);
+      },(error: HttpErrorResponse)=>{
+        this.openDialog("2");
       }
     )
   };
@@ -54,5 +60,15 @@ export class AddCarComponent implements OnInit{
     this.router.navigate(["/approvedCar"]);
   }
   
+  paymentRecord(){
+    this.router.navigate(['/partner-payment']);
+  }
+
+  openDialog(dialogType: string) {
+    this.dialog.open(DialogBoxComponent, {
+      width: '400px',
+      data: { dialogType }
+    });
+  }
 
 }

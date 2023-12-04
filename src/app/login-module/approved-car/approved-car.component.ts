@@ -51,5 +51,9 @@ approvedCarClick(){
   this.router.navigate(["/approvedCar"]);
 }
 
+paymentRecord(){
+  this.router.navigate(['/partner-payment']);
+}
+
 
 }

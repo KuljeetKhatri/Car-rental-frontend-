@@ -24,6 +24,7 @@ export class PartnerComponentComponent implements OnInit{
       this.http.get(`http://localhost:8082/partner/${partnerId}`).subscribe(
         (response: any) =>{
           this.partnerDetails = response;
+          this.partnerShared.partnerId = response.id;
          
         }, 
         (error) => {
@@ -37,12 +38,17 @@ export class PartnerComponentComponent implements OnInit{
       // Handle the case where adminId is null, e.g., redirect to login
     }
   }
-
-  addCar(){
-    this.partnerShared.partnerId = this.partnerDetails.id;
-    this.router.navigate(['/addCar']);
-  }
-
+  
+    addCar(){
+      this.partnerShared.partnerId = this.partnerDetails.id;
+      this.router.navigate(['/addCar']);
+    }
+  
+    paymentRecord(){
+      this.partnerShared.partnerId = this.partnerDetails.id;
+      this.router.navigate(['/partner-payment']);
+    }
+  
   approvedCar(){
     this.partnerShared.partnerId = this.partnerDetails.id;
     this.router.navigate(["/approvedCar"]);

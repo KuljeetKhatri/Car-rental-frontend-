@@ -20,7 +20,7 @@
                         <a class="nav-link" (click)="approvedCarClick() ">Approved Car</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  (click)="paymentRecord()">Payment Records</a>
+                        <a class="nav-link" (click)="getPayment()">Payment Records</a>
                     </li>
                 </ul>
             </div>
@@ -33,21 +33,19 @@
         <table class="table table-striped" >
           <thead>
             <tr>
-              <th>Brand</th>
-              <th>Model</th>
-              <th>Year</th>
-              <th>Color</th>
-              <th>Registration Number</th>
+                <th>Registration Number</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Rent</th>
               <!-- Add more headers as needed -->
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let car of carDetais">
-              <td>{{ car.brand }}</td>
-              <td>{{ car.model }}</td>
-              <td>{{ car.year }}</td>
-              <td>{{ car.color }}</td>
-              <td>{{ car.registrationNumber }}</td>
+            <tr *ngFor="let details of paymentDetails">
+                <td>{{ details.registrationNumber }}</td>
+              <td>{{ details.startDate }}</td>
+              <td>{{ details.endDate }}</td>
+              <td>{{ details.rentPerDay }}</td>
               <!-- Add more cells as needed -->
             </tr>
           </tbody>
