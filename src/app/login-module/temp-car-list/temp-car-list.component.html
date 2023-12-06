@@ -21,7 +21,10 @@
                         <a class="nav-link" (click)="OnClikedApprove()">Cars to be Approve</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link"(click)="OnClikedPartner()">Partner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="logout()">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -31,7 +34,6 @@
    <!-- admin-component.component.html -->
 
 <!-- admin-component.component.html -->
-<router-outlet>
     
 <div  class="container mt-5 pt-4" >
 <h2>Cars to be Approved</h2>
@@ -39,6 +41,7 @@
     <thead>
         <tr>
             <th>ID</th>
+            <th>Partner Name</th>
             <th>Brand</th>
             <th>Model</th>
             <th>Registration Number</th>
@@ -50,6 +53,7 @@
     <tbody>
         <tr *ngFor="let car of tempCars">
             <td>{{ car.id }}</td>
+            <td> {{car.partnerFirstName}} {{car.partnerLastName}}</td>
             <td>{{ car.brand }}</td>
             <td>{{ car.model }}</td>
             <td>{{ car.registrationNumber }}</td>
@@ -67,7 +71,6 @@
   </div>
   
 
-</router-outlet>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">

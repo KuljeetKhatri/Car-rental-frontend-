@@ -31,6 +31,7 @@ export class ReservationComponent implements OnInit{
     this.sharedService.selectedVehicle = this.selectedVehicle;
     this.sharedService.endDate = new Date(this.returnDate);
     this.sharedService.startDate = new Date(this.pickUpDate );
+    this.sharedService.address = this.pickedLocation;
 
   
   }
@@ -59,4 +60,13 @@ export class ReservationComponent implements OnInit{
     });
     
   }
+
+  logout() {
+    localStorage.clear();
+     this.router.navigate(['/login']); // Replace '/login' with the actual path you want to navigate to after logout.
+   }
+
+   Payment(){
+    this.router.navigate(['/payment']);
+   }
 }

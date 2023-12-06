@@ -14,6 +14,8 @@ import { MatDialog } from '@angular/material/dialog';
 export class CarReservationComponent implements OnInit{
   private split: any;
   public cars: any[] =[];
+  private rentPerDay : number=0;
+  message: any= "";
 
   constructor(private sharedService: SharedService, private router:Router, private http: HttpClient, private dialog: MatDialog){}
 
@@ -35,6 +37,8 @@ export class CarReservationComponent implements OnInit{
       (response: any) => {
         this.cars = response;
         console.log(response);
+        this.rentPerDay = response[0].rentPerDay;
+        // console.log(response[0].rentPerDay);
       },
       (error) => {
         console.error('Error fetching cars', error);
@@ -68,7 +72,8 @@ export class CarReservationComponent implements OnInit{
     const loginResservationData = {
       startDate:this.sharedService.startDate,
       endDate:this.sharedService.endDate,
-      rent:null,
+      // rentPerDay:this.rentPerDay,
+      // rent:null
     };
     console.log(loginResservationData);
     this.http.post(`http://localhost:8082/reservation/${localStorage.getItem("adminId")}/${carid}`, loginResservationData).subscribe(
@@ -83,6 +88,14 @@ export class CarReservationComponent implements OnInit{
     );
 
   }
+  payment(){
+    this.router.navigate(['/payment']);
+   }
+
+  logout() {
+    localStorage.clear();
+     this.router.navigate(['/login']); // Replace '/login' with the actual path you want to navigate to after logout.
+   }
 
   openDialog(dialogType: string) {
     this.dialog.open(DialogBoxComponent, {

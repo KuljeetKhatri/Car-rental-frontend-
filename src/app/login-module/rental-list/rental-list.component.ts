@@ -44,35 +44,6 @@ export class RentalListComponent implements OnInit {
       }
     );
   }
-  // calculateRent1(record: any): number {
-  //   const start = new Date(record.startDate);
-  //   const end = new Date(record.endDate);
-
-  //   const timeDiff = Math.abs(end.getTime() - start.getTime());
-  //   const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-  //   if (diffDays != 0) {
-  //     const rent = diffDays * record.rent;
-  //     return rent;
-  //   }
-  //   return record.rent;
-  // }
-
-
-  // calculateRent(record: any): number {
-  //   const start = new Date(record.startDate);
-  //   const end = new Date(record.endDate);
-
-  //   const timeDiff = Math.abs(end.getTime() - start.getTime());
-  //   const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-  //   if (diffDays != 0) {
-  //     const rent = diffDays * record.rentPerDay;
-  //     return rent;
-  //   }
-  //   console.log(record.rentPerDay);
-  //   return record.rentPerDay;
-  // }
 
   ngOnInit(): void {
     this.getUserDetails();
@@ -96,4 +67,12 @@ export class RentalListComponent implements OnInit {
       this.router.navigate(['/reservation']);
     });
   }
+
+  logout() {
+    localStorage.clear();
+     this.router.navigate(['/login']); // Replace '/login' with the actual path you want to navigate to after logout.
+   }
+   Payment(){
+    this.router.navigate(['/payment']);
+   }
 }

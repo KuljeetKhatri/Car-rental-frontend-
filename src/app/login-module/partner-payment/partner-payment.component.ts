@@ -48,5 +48,10 @@ export class PartnerPaymentComponent implements OnInit{
   approvedCarClick(){
     this.router.navigate(["/approvedCar"]);
   }
+
+  logout() {
+    localStorage.clear();
+     this.router.navigate(['/login']); // Replace '/login' with the actual path you want to navigate to after logout.
+   }
   
 }

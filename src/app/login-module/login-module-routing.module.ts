@@ -17,6 +17,8 @@ import { PartnerRegistrationComponent } from './partner-registration/partner-reg
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { CrditCardComponent } from './crdit-card/crdit-card.component';
 import { PartnerPaymentComponent } from './partner-payment/partner-payment.component';
+import { AllPartnerComponent } from './all-partner/all-partner.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
 
@@ -128,6 +130,14 @@ const routes: Routes = [
     {
       path:"partner-payment",
       component:PartnerPaymentComponent
+    },
+    {
+      path:"partner-detalis",
+      component:AllPartnerComponent
+    },
+    {
+      path:"payment",
+      component:PaymentComponent
     }
     
 ];

@@ -49,6 +49,7 @@ export class CrditCardComponent implements OnInit{
   submitClick(){
     console.log(this.card);
     this.creditCardRegistration();
+    this.router.navigate(['/login']);
   }
   openDialog(dialogType: string) {
     this.dialog.open(DialogBoxComponent, {

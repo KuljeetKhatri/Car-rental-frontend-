@@ -26,8 +26,11 @@
             <a class="nav-link" (click)="OnClickedRecodes()">Records</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Report Accident</a>
+            <a class="nav-link" (click)="Payment()">Payments</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
         </ul>
       </div>
     </div>
@@ -35,7 +38,7 @@
 
   <div class="container"></div>
   <div class="text-center" style="margin-top: 100px">
-    <h1 class="display-4">Welcome <span id="username">User {{userDetails.firstName}} {{userDetails.lastName}}!</span></h1>
+    <h1 class="display-4">Welcome <span id="username">{{userDetails.firstName}} {{userDetails.lastName}}!</span></h1>
     <img src="../../../assets/Image/usercar.jpg" alt="Car" />
   </div>
 

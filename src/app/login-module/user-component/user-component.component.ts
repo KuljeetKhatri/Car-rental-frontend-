@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component ,OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { PartnerSharedServiceService } from '../partner-shared-service.service';
+import { SharedService } from 'src/app/shared.service';
 
 
 
@@ -11,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class UserComponentComponent implements OnInit{
 
-  constructor(private router: Router, private http: HttpClient){}
+  constructor(private router: Router, private http: HttpClient, private shareData: SharedService){}
   userDetails: any = {}
 
   getUserDetails() {
@@ -23,6 +25,7 @@ export class UserComponentComponent implements OnInit{
           this.userDetails = response;
           console.log('User Details:', this.userDetails);
           localStorage.setItem("userId",response.id);
+          localStorage.setItem("user_id",this.userDetails.id);
         },
         (error) => {
           console.error('Error fetching user details', error);
@@ -36,25 +39,37 @@ export class UserComponentComponent implements OnInit{
   }
 
   OnClickedRecodes(){
-    console.log("helo");
     localStorage.setItem("userid",this.userDetails.firstName);
-    console.log(localStorage.getItem("userId"));
+    localStorage.setItem("user_id",this.userDetails.id);
     this.router.navigateByUrl('/', { skipLocationChange: false }).then(() => {
       this.router.navigate(['/records']);
     });
   }
 
   OnClickedHome(){
+    localStorage.setItem("user_id",this.userDetails.id);
     this.router.navigateByUrl('/', { skipLocationChange: false }).then(() => {
       this.router.navigate(['/user']);
     });
   }
   
   OnClickedFindCar(){
+    localStorage.setItem("user_id",this.userDetails.id);
     this.router.navigateByUrl('/', { skipLocationChange: false }).then(() => {
       this.router.navigate(['/reservation']);
     });
   }
+
+  logout() {
+    localStorage.clear();
+     this.router.navigate(['/login']); // Replace '/login' with the actual path you want to navigate to after logout.
+   }
+
+   Payment(){
+    // this.shareData.userId = this.userDetails.id;
+    localStorage.setItem("user_id",this.userDetails.id);
+    this.router.navigate(['/payment']);
+   }
 
   ngOnInit(): void {
     this.getUserDetails();

@@ -69,6 +69,18 @@ export class  TempCarListComponent implements OnInit{
     );
   }
 
+  OnClikedPartner(){
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/partner-detalis']);
+    });
+  }
+  
+  logout() {
+    localStorage.clear();
+     this.router.navigate(['/login']); // Replace '/login' with the actual path you want to navigate to after logout.
+   }
+  
+
 
   ngOnInit(): void {
     this.getAllTempCar();

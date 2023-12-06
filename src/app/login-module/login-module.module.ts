@@ -29,7 +29,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CrditCardComponent } from './crdit-card/crdit-card.component';
 import { PartnerPaymentComponent } from './partner-payment/partner-payment.component';
-
+import { AllPartnerComponent } from './all-partner/all-partner.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 
@@ -55,6 +56,9 @@ import { PartnerPaymentComponent } from './partner-payment/partner-payment.compo
     DialogBoxComponent,
     CrditCardComponent,
     PartnerPaymentComponent,
+    AllPartnerComponent,
+    PaymentComponent,
+
 
   ],
   imports: [

@@ -58,5 +58,10 @@ export class PartnerComponentComponent implements OnInit{
     this.router.navigate(["/partner"]);
   }
 
+  logout() {
+    localStorage.clear();
+     this.router.navigate(['/login']); // Replace '/login' with the actual path you want to navigate to after logout.
+   }
+
 
 }
